@@ -1,0 +1,33 @@
+#defines the actual algorithm
+
+import course
+import student
+import semester
+import data
+
+class algorithm:
+    isemesters = []
+    iconcentration = ""
+    iyear = ""
+    students = []
+    courserecs = []
+    
+    #initialize an instance of the class
+    def __init__ (self, sem, conc, year, students):
+        self.isemesters = sem
+        self.iconcentration = conc
+        self.iyear = year
+        self.students = students
+    
+    #go through every student and assign values for each course
+    def values(self):
+        for x in self.students:
+            curYear = x.year
+            curSemesters = x.semesters
+            curConc = x.concentration
+            multiplier = 0
+            semIndex = self.isemesters.length - 1
+            mySem = self.isemesters[semIndex]
+            
+                
+            

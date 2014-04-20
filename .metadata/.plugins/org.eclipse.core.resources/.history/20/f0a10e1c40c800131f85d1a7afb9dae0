@@ -1,0 +1,11 @@
+import course
+
+class weights:
+    course = course()
+    weight 
+    
+    def __init__(self, course, weight):
+        self.course = course
+        self.weight = weight
+        
+    
