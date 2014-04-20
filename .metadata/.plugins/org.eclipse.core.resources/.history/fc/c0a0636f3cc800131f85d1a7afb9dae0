@@ -1,0 +1,18 @@
+#defines the actual algorithm
+
+import course
+import student
+import semester
+import data
+
+class algorithm:
+    isemesters = []
+    iconcentration = ""
+    iyear = ""
+    students = []
+    
+    def __init__ (self, sem, conc, year, students):
+        self.isemesters = sem
+        self.iconcentration = conc
+        self.iyear = year
+        self.students = students

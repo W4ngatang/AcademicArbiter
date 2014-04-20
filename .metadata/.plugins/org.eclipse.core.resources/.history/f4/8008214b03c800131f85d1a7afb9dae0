@@ -1,0 +1,5 @@
+class course:
+    concentration = ""
+    qscore = 0
+    
+    

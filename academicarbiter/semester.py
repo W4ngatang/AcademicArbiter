@@ -1,0 +1,12 @@
+#defines the semester class
+
+class semester:
+    courses = []
+    
+    def __init__(self, courses):
+        self.courses = courses
+        
+    def getCourses(self):
+        return self.courses
+    
+    

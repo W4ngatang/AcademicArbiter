@@ -1,0 +1,22 @@
+#defines the student class
+
+class student:
+    year = 0
+    semesters = []
+    concentration = ""
+    secondary = ""
+    
+    def __init__(self, year, semesters, concentration, secondary):
+        self.year = year
+        self.semesters = semesters
+        self.concentration = concentration
+        self.secondary = secondary
+        
+    def getYear(self):
+        return self.year
+    def getSemesters(self):
+        return self.semesters
+    def getConcentration(self):
+        return self.concentration
+    def getSecondary(self):
+        return self.secondary

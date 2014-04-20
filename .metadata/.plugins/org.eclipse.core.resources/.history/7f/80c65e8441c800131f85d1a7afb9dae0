@@ -1,0 +1,19 @@
+#class that holds a course and a weight
+
+import course
+
+class weights:
+    course = course()
+    weight = 0
+    
+    def __init__(self, course, weight):
+        self.course = course
+        self.weight = weight
+        
+    def getCourse (self):
+        return self.course
+    
+    def getWeight (self):
+        return self.weight
+        
+    
