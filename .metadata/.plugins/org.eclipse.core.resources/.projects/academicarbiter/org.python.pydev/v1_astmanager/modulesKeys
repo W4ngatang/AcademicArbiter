@@ -1,1 +1,6 @@
 MODULES_MANAGER_V2
+algorithm|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\algorithm.py
+course|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\course.py
+data|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\data.py
+semester|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\semester.py
+student|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\student.py
