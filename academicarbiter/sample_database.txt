@@ -1,0 +1,8 @@
+cs51, Introduction to Computer Science II, computer science, 
+math23a, Fun with Paul II ;), math
+math23b, Fun with Paul I, math
+cs50, Introduction to Computer Science I, computer science
+ls1a, Life Science I, science of living systems
+ls1b, Life Science II, science of living systems
+ec10a, Economics II, economics
+ec10b, Economics I, economics
