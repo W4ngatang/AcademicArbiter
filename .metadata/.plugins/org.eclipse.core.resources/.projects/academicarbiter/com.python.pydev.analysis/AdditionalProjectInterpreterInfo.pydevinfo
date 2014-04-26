@@ -20,24 +20,19 @@ semester|0|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\s
 1=algorithm
 -- END DICTIONARY
 -- START TREE 1
-6
+4
 alg|1|algorithm!9@
 cou|1|course!17@
-dat|0|
 sem|1|semester!25@
 stu|1|student!33@
-wei|0|
 -- END TREE
 -- START TREE 2
-18
-!<m|0|
+14
 __i|4|__init__!3&26@__init__!2&18@__init__!1&10@__init__!4&34@
-che|0|
 con|4|concentration!5&19@concentration!2&19@concentration!6&35@concentration!4&35@
 cou|3|courses!7&27@courses!3&27@courseRecs!1&11@
 get|8|getSemesters!4&34@getConcentration!2&18@getName!2&18@getConcentration!4&34@getScore!2&18@getCourses!3&26@getSecondary!4&34@getYear!4&34@
 ico|2|iconcentration!8&11@iconcentration!1&11@
-inp|0|
 ise|2|isemesters!8&11@isemesters!1&11@
 iye|2|iyear!8&11@iyear!1&11@
 nam|2|name!5&19@name!2&19@
@@ -46,6 +41,5 @@ sec|2|secondary!6&35@secondary!4&35@
 sem|2|semesters!6&35@semesters!4&35@
 stu|2|students!8&11@students!1&11@
 val|1|values!1&10@
-wei|0|
 yea|2|year!6&35@year!4&35@
 -- END TREE
