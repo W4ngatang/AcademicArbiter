@@ -1,3 +1,3 @@
 0, physics, 2017
-1, cs50, math23a, ec10a, ls1a
+1, cs50, 1, -1, 1, math23a, ec10a, ls1a
 2, cs51, math23b, ec10b, ls1b
