@@ -28,7 +28,3 @@ class course:
         return self.sScore
     def getConcentration(self):
         return self.concentration
-    
-    
-    
-    
