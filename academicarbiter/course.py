@@ -16,11 +16,18 @@ class course:
     
     def getName (self):
         return self.name
-    def getScore(self):
-        return self.qscore
     def getT(self):
         return self.tScore
     def getD(self):
         return self.dScore
     def getS(self):
+<<<<<<< HEAD
         return self.sScore
+
+    
+    
+    
+    
+=======
+        return self.sScore
+>>>>>>> 801fc4a0213ac14bc11c04d12550341ad9a38a31

@@ -13,10 +13,11 @@ algorithm|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\al
 course|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\course.py
 data|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\data.py
 filehandling|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\filehandling.py
-finalprojectui|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\finalprojectui.py
-sdlfns|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\sdlfns.py
+main|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\main.py
+new_gui|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\new_gui.py
 semester|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\semester.py
 student|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\student.py
+tests|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\tests.py
 tkColorChooser|C:\Python27\Lib\lib-tk\tkColorChooser.py
 tkCommonDialog|C:\Python27\Lib\lib-tk\tkCommonDialog.py
 tkFileDialog|C:\Python27\Lib\lib-tk\tkFileDialog.py
