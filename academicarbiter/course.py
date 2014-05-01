@@ -21,13 +21,5 @@ class course:
     def getD(self):
         return self.dScore
     def getS(self):
-<<<<<<< HEAD
         return self.sScore
 
-    
-    
-    
-    
-=======
-        return self.sScore
->>>>>>> 801fc4a0213ac14bc11c04d12550341ad9a38a31
