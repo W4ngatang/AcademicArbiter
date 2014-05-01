@@ -1,2 +1,47 @@
-math,100
-economics,1000
+African and African American Studies, 33
+Anthropology, 69
+Applied Mathematics, 243
+Astrophysics, 30
+Biomedical Engineering, 55
+Chemical and Physical Biology, 41
+Chemistry, 91
+Chemistry and Physics, 41
+Classics, 50
+Comparative Study of Religion, 22
+Computer Science, 299
+Earth and Planetary Sciences, 24
+East Asian Studies, 55
+Economics, 569
+Electrical Engineering, 38
+Engineering Sciences, 110
+English, 168
+Environmental Science and Public Policy, 34
+Folklore and Mythology, 15
+Germanic Languages and Literatures, 6
+Government, 479
+History, 180
+History and Literature, 143
+History and Science, 106
+History of Art and Architecture, 67
+Human Developmental and Regenerative Biology, 155
+Human Evolutionary Biology, 127
+Linguistics, 31
+Literature, 36
+Mathematics, 138
+Mechanical Engineering, 51
+Molecular and Cellular Biology, 86
+Music, 28
+Near Eastern Languages and Civilizations, 21
+Neurobiology, 224
+Organismic and Evolutionary Biology, 132
+Philosophy, 56
+Physics, 106
+Psychology, 281
+Romance Languages and Literatures, 38
+Slavic Languages and Literatures, 5
+Social Studies, 282
+Sociology, 156
+South Asian Studies, 8
+Statistics, 137
+WGS, 38
+Visual and Environmental Studies, 49
