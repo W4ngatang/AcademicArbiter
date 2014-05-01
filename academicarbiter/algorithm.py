@@ -96,7 +96,7 @@ class algorithm:
                 if course in self.courseRecs:
                     self.courseRecs[course] += score
                 else:
-                    self.courseRecs.update({course, score})  
+                    self.courseRecs[course] = score 
             
             #remove the courses if they have already taken
             #for x in self.courseRecs:  
@@ -106,11 +106,13 @@ class algorithm:
                                       
         #create a new sorted dictionary based on weights
         newRecs = dict()
-        for x in (self.courseRecs.iterkeys()):
+        keys = self.courseRecs.keys()
+        for x in keys:
             key = self.courseRecs[x]
             if key in newRecs.keys(): 
                 newRecs[key].append(x)
-            newRecs[key] = x
+            else:
+                newRecs[key] = {x}
              
         return newRecs
                         
