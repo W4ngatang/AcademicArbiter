@@ -2,7 +2,63 @@
 1, cs50, 1, -1, 1, math23a, 1, 1, 1, ec10a, -1, -1, -1, ls1a, 1, 1, -1
 2, cs51, 1, 1, 1, math23b, 1, 1, 1, ec10b, 1, 1, 1, ls1b, 1, 1, 1
 0, neurobiology, 2015
-1, ls1a, 1, 1, 1, math21a, 1, 1, 1, expos20.190, -1, -1, 1, gov20, 1, 1, 1
+1, ls1a, 1, 1, 1, math21a, 1, 1, 1, expos20, -1, -1, 1, gov20, 1, 1, 1
 2, ls1b, 1, 1, 1, chem20, 1, 1, 1, ec1400, 1, 1, 1, math21b, 1, 1, 1
-3, mcb80, 1, 1, 1, oeb57, 1, 1, 1, music51, 1, 1, 1, sls20, 1, 1, 1
+3, mcb80, 1, 1, 1, oeb57, 1, 1, 1, music51a, 1, 1, 1, sls20, 1, 1, 1
 4, ec1011b, 1, 1, 1, cs124, 1, 1, 1, math123, 1, 1, 1, oeb55, 1, 1, 1
+0, applied math, 2016
+1, cs50, 1, 1, 1, math23a, 1, 1, -1, ec1010a, -1, -1, 1, expos20, -1, -1, 1
+2, cs51, 1, -1, 1, math23b, 1, 1, 1, ec1011b, -1, 1, 1, ec1400, 1, 1, 1
+3, cs61, 1, 1, 1, math154, 1, 1, 1, sls20, 1, 1, 1, cs105, 1, 1, 1
+4, es50, 1, 1, 1, ec1126, 1, 1, 1, expos40, 1, 1, 1, math123, 1, -1, -1
+0, physics, 2014
+1, ls1a, -1, -1, 1, math1a, 1, -1, 1, gov20, 1, 1, -1, er18, 1, 1, 1
+2, math1b, 1, 1, -1, ls1b, -1, -1, 1, stat104, 1, 1, -1, cb105, -1, 1, 1
+3, phys15a, 1, 1, 1, math21a, 1, 1, -1, sociol10, 1, 1, -1, stat110, 1, 1, -1
+4, phys15b, 1, 1, 1, math21b, 1, -1, 1, psy15, 1, 1, -1, math114, 1, 1, -1
+5, phys15c, 1, 1, 1, am104, 1, 1, 1, cs121, 1, -1, 1, ae15, 1, 1, -1,
+6, phys143a, 1, 1, 1, am105, 1, -1, 1, am121, 1, -1, 1, cs124, 1, 1, -1,
+7, phys143b, 1, 1, 1, phys151, 1, -1, 1, sls20, -1, -1, -1, math136, 1, 1, -1
+8, phys181, 1, 1, 1, phys191r, 1, 1, 1, math123, 1, 1, -1, es50, 1, 1, -1
+0, physics, 2014
+1, phys16, math23a,
+2, phys15b, math23b,
+3, phys15c, am104, phys151, 
+4, phys143a, am105,
+5, phys143b, phys125,
+6, phys167, phys181,
+7, phys191r, phys210, cs50, 
+8, es109, phys145,
+0, computer science, 2015
+1, math1a, cs50,
+2, math1b, cs51,
+3, cs20, cs61,
+4, am21b,
+5, cs121, cs141
+6, cs124, cs171, 
+0, computer science, 2015
+1, am21a, cs50
+2, am21b, cs51,
+3, cs20, cs61, cs121,
+4, cs124, 
+5, cs141, cs189r,
+6, cs146, cs181 
+0, computer science, 2015
+1, math25a, cs50,
+2, math25b, cs51,
+3, cs121, cs61, am106,
+4, am107, cs124,
+5, cs141, cs127, cs175
+6, cs152, cs165
+0, physics, 2014
+1, math1b
+2, phys15a, math21a,
+3, phys15b, math21b,
+4, phys15c,
+5, phys143a,
+6, phys125, astro16
+7, chem17, cs50
+8, phys181
+0, statistics, 2017
+1, math1b, 1, 1, 1, cb19, 1, 1, -1, stat104, -1, 1, -1, sls20, 1, 1, 1
+2, expos20, -1, -1, -1, soc26, 1, 1, -1, math21a, 1, 1, -1, usw29, 1, -1, -1
