@@ -12,7 +12,7 @@ Tkinter|C:\Python27\Lib\lib-tk\Tkinter.py
 algorithm|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\algorithm.py
 course|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\course.py
 data_parser|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\data_parser.py
-gui|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\gui.py
+main|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\main.py
 runner|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\runner.py
 semester|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\semester.py
 student|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\student.py
