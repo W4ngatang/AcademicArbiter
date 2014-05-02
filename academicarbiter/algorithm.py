@@ -54,7 +54,7 @@ class algorithm:
             
             #get all of the courses from you and from them
             numSems = len(curSemesters)
-            if (numSems > semIndex + 2):
+            if (numSems > semIndex + 1):
                 theirSem = curSemesters[semIndex]
                 myClasses = self.isemester.getCourses()
                 theirClasses = theirSem.getCourses()
@@ -63,10 +63,10 @@ class algorithm:
                 for myClass in myClasses:
                     for theirClass in theirClasses:
                         #check the name
-                        print(theirClass.getName())
                         if (myClass.getName() == theirClass.getName()):
                             #compare your scores for the class
                             classScore = 0
+
                             if (myClass.getT() == theirClass.getT()):
                                 classScore += self.teach
                             else:
@@ -83,22 +83,36 @@ class algorithm:
                                 #offset likelihood of being in the same large class
                                 #by dividing by the size of the class
 
-                                enrollment = self.allCourses[myClass.getName()]
-                                
-                                similarity += 1 * (1 / enrollment) * (classScore / 100)
+                            enrollment = self.allCourses[myClass.getName()]
+                            
+                            print("first")
+                            print(similarity)
+                            print("class")
+                            print(classScore)
+                            print("second")
+                            similarity += 50 * classScore
+                            print("before")
+                            print(similarity)
+                            similarity *= (1.0 / enrollment) 
+                            print("after")
+                            print(similarity)
     
                 #check for the same concentration
                 if (curConc == self.iconcentration):
-                    print("same concentration")
                     #find the number of students in that concentration
                     numStudents = self.allConcentrations[curConc]
-                    similarity *= (1 + 1/numStudents)
+                    print("third")
+                    similarity *= (1 + 25/numStudents)
+                    print(similarity)
                 
                 theirClasses = curSemesters[semIndex + 1].getCourses()
+                for course in theirClasses:
+                    print("second time course:")
+                    print(course.getName())
                 
                 #add their courses to a list of recs
                 for course in theirClasses:
-                    print(course.getName())
+                    #print(course.getName())
                     score = 0
                     score += (similarity * course.getD() * self.diff)
                     score += (similarity * course.getT() * self.teach)

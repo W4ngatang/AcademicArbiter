@@ -19,29 +19,22 @@ def getStudents() :
             new_semesters = []
             # variable to track when to stop adding data to the new student object
             y = 1
+            curCourses = []
             while ((x+y) < len(dump) and dump[x+y][0][0] != "0"):
                 # variable for modding over list
+                curCourses = []
                 for z in range(int((len(dump[x+y][0]) - 1) / 4)):
-                    curCourses = []
                     curCourses.append(
                             course.course(dump[x+y][0][4 * z + 1], 
                                           int(dump[x+y][0][4 * z + 2]), 
                                           int(dump[x+y][0][4 * z + 3]), 
                                           int(dump[x+y][0][4 * z + 4])))
-                    sem = semester.semester(curCourses)
-                    new_semesters.append(sem)
+                sem = semester.semester(curCourses)
+                new_semesters.append(sem)
                 y = y + 1
+                
             new_student = student.student(dump[x][0][2], new_semesters, dump[x][0][1], "")
             students.append(new_student)
-    
-        for student in students:
-            print("new student")
-            sems = student.getSemesters()
-            for sem in sems:
-                crs = sem.getCourses()
-                for course in crs:
-                    print(course.getName())
-    
     return students
 
 #returns a dictionary of course number, enrollment
