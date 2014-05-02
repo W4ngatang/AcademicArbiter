@@ -11,10 +11,9 @@ Tkdnd|C:\Python27\Lib\lib-tk\Tkdnd.py
 Tkinter|C:\Python27\Lib\lib-tk\Tkinter.py
 algorithm|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\algorithm.py
 course|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\course.py
-data|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\data.py
-filehandling|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\filehandling.py
-main|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\main.py
-new_gui|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\new_gui.py
+data_parser|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\data_parser.py
+gui|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\gui.py
+runner|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\runner.py
 semester|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\semester.py
 student|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\student.py
 tests|C:\Users\Amanpreet\Documents\GitHub\AcademicArbiter\academicarbiter\tests.py
