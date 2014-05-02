@@ -372,9 +372,14 @@ def fifth_window(courses):
     text.tag_add("center", 1.0, "end")
     text.config(state=DISABLED)
     print(courses)
-    print(len(courses))
-
-    for i in range (0, 9):
+    length = len(courses)
+    numRecs = 0
+    if (length < 10):
+        numRecs = length
+    else:
+        numRecs = 9
+        
+    for i in range (0, numRecs):
         #List of course recommendations based on the algorithms will go here:
         var = StringVar()
         label_descr = courses[i]
