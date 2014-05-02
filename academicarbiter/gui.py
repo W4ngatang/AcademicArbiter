@@ -1,6 +1,5 @@
 from Tkinter import *
 import tkFont
-import tkMessageBox
 
 import runner
 
@@ -78,14 +77,21 @@ difficulty4_entry = None
 material4_entry = None
 teaching4_entry = None
 
-
+#close window function
 def close_window():
     window = windows[0]
     window.destroy()
     windows.remove(window)
     if not windows: root.quit()
     
-def diff_var(wdw, num):
+#function to add a radio button
+
+def make_radio(wdw, textVal, varName, commandName, val):
+    R = Radiobutton(wdw, text=textVal, variable=varName, 
+                     value=val,command=commandName)
+    R.pack(anchor = W)
+    
+def diff_var(wdw, varName, commandName):
     #variable for difficulty
     var = StringVar()
     label_descr = "Difficulty of the above class:"
@@ -93,31 +99,30 @@ def diff_var(wdw, num):
     label = Label( wdw, textvariable=var, relief=RAISED )
     label.pack()
     
-    variableName = 'radio_diff' + str(num)
-    commandName = 'sel_diff' + str(num)
-    
-    #R6 = Radiobutton(wdw, text="Easy", variable=variableName, 
-    #                 value=1,command=commandName)
-    #R6.pack( anchor = W )
-    #R7 = Radiobutton(wdw, text="Difficulty", variable=variableName, 
-    #                 value=(-1),command=commandName)
-    #R7.pack( anchor = W )
- 
-def teach_var(wdw):   
+    make_radio(wdw, "Easy", varName, commandName, 1)
+    make_radio(wdw, "Difficult", varName, commandName, -1)
+
+def teach_var(wdw, varName, commandName):   
     # variable for teaching
     var = StringVar()
     label_descr = "Did you like or dislike the teaching of the course?"
     var.set (label_descr)
     label = Label( wdw, textvariable=var, relief=RAISED )
     label.pack()
+    
+    make_radio(wdw, "Liked", varName, commandName, 1)
+    make_radio(wdw, "Disliked", varName, commandName, -1)
   
-def mat_var(wdw):  
+def mat_var(wdw, varName, commandName):  
     #variable for material
     var = StringVar()
     label_descr = "Did you like or dislike the material?"
     var.set (label_descr)
     label = Label( wdw, textvariable=var, relief=RAISED )
     label.pack()
+    
+    make_radio(wdw, "Liked", varName, commandName, 1)
+    make_radio(wdw, "Disliked", varName, commandName, -1)
 
 def new_window():
     wdw = Toplevel()
@@ -169,24 +174,11 @@ def sec_window():
     var.set("What year are you?")
     label.pack()
     
-    #add radio buttons 
-
-    R1 = Radiobutton(wdw, text="Freshman", variable=radio_year, value=1,
-                      command=sel_yr)
-    R1.pack( anchor = W )
-    
-    R2 = Radiobutton(wdw, text="Sophomore", variable=radio_year, value=2,
-                      command=sel_yr)
-    R2.pack( anchor = W )
-
-    R3 = Radiobutton(wdw, text="Junior", variable=radio_year, value=3,
-                      command=sel_yr)
-    R3.pack( anchor = W)
-
-    R4 = Radiobutton(wdw, text="Senior", variable=radio_year, value=4,
-                      command=sel_yr)
-    R4.pack( anchor = W)
-
+    #add radio buttons    
+    make_radio(wdw, "Freshman", radio_year, sel_yr, 1)
+    make_radio(wdw, "Sophomore", radio_year, sel_yr, 2)
+    make_radio(wdw, "Junior", radio_year, sel_yr, 3)
+    make_radio(wdw, "Senior", radio_year, sel_yr, 4)
 
     #semester label
     var = StringVar()
@@ -195,14 +187,8 @@ def sec_window():
     label.pack()
 
     #add radio button for semester
-    R5 = Radiobutton(wdw, text="Fall", variable=radio_sem, value=1,
-                      command=sel_sem)
-    R5.pack( anchor = W )
-    
-    R6 = Radiobutton(wdw, text="Spring", variable=radio_sem, value=2,
-                      command=sel_sem)
-    R6.pack( anchor = W )
-    
+    make_radio(wdw, "Fall", radio_sem, sel_sem, 1)
+    make_radio(wdw, "Spring", radio_sem, sel_sem, 1)
 
     #another label for concentration
     var = StringVar()
@@ -292,63 +278,21 @@ tell us what you felt about each class."
     course1_entr.pack()
     course1_entry = course1_entr
     
-    diff_var(wdw, 1)
-    
-    R6 = Radiobutton(wdw, text="Easy", variable=radio_diff1, 
-                     value=1,command=sel_diff1)
-    R6.pack( anchor = W )
-    R7 = Radiobutton(wdw, text="Difficult", variable=radio_diff1, 
-                     value=(-1),command=sel_diff1)
-    R7.pack( anchor = W )
+    diff_var(wdw, radio_diff1, sel_diff1)
 
-    mat_var(wdw)
+    mat_var(wdw, radio_matrl1, sel_matrl1)
 
-    R8 = Radiobutton(wdw, text="Liked", variable=radio_matrl1, value=1,
-                      command=sel_matrl1)
-    R8.pack( anchor = W )
-    R9= Radiobutton(wdw, text="Disliked", variable=radio_matrl1, value= -1,
-                      command=sel_matrl1)
-    R9.pack( anchor = W )
+    teach_var(wdw, radio_teach1, sel_teach1)
 
-    teach_var(wdw)
-
-    R10 = Radiobutton(wdw, text="Liked", variable=radio_teach1, value=1,
-                      command=sel_teach1)
-    R10.pack( anchor = W )
-    R11 = Radiobutton(wdw, text="Disliked", variable=radio_teach1, value=-1,
-                      command=sel_teach1)
-    R11.pack( anchor = W )
-    
     course2_entr = Entry(wdw, bd =5)
     course2_entr.pack()
     course2_entry = course2_entr
     
-    diff_var(wdw, 2)
-    
-    R12 = Radiobutton(wdw, text="Easy", variable=radio_diff2, 
-                     value=1,command=sel_diff2)
-    R12.pack( anchor = W )
-    R13 = Radiobutton(wdw, text="Difficult", variable=radio_diff2, 
-                     value=(-1),command=sel_diff2)
-    R13.pack( anchor = W )
+    diff_var(wdw, radio_diff2, sel_diff2)
 
-    mat_var(wdw)
+    mat_var(wdw, radio_matrl2, sel_matrl2)
 
-    R14 = Radiobutton(wdw, text="Liked", variable=radio_matrl2, value= 1,
-                      command=sel_matrl2)
-    R14.pack( anchor = W )
-    R15 = Radiobutton(wdw, text="Disliked", variable=radio_matrl2, value= -1,
-                      command=sel_matrl2)
-    R15.pack( anchor = W )
-
-    teach_var(wdw)
-
-    R16 = Radiobutton(wdw, text="Liked", variable=radio_teach2, value=1,
-                      command=sel_teach2)
-    R16.pack( anchor = W )
-    R17 = Radiobutton(wdw, text="Disliked", variable=radio_teach2, value=-1,
-                      command=sel_teach2)
-    R17.pack( anchor = W )
+    teach_var(wdw, radio_teach2,sel_teach2)
 
     #Add "Add info for two more courses" button
     btn = Button(wdw, text ="Add info for two more courses!", command = fourth_window)
@@ -371,82 +315,35 @@ def fourth_window ():
     #close third window
     close_window()
     
-    
     course3_entr = Entry(wdw, bd =5)
     course3_entr.pack()
     course3_entry = course3_entr
 
-    diff_var(wdw, 3)
-    
-    R6 = Radiobutton(wdw, text="Easy", variable=radio_diff3, 
-                     value=1,command=sel_diff3)
-    R6.pack( anchor = W )
-    R7 = Radiobutton(wdw, text="Difficult", variable=radio_diff3, 
-                     value=(-1),command=sel_diff3)
-    R7.pack( anchor = W )
+    diff_var(wdw, radio_diff3, sel_diff3)
 
-    mat_var(wdw)
+    mat_var(wdw, radio_matrl3, sel_matrl3)
 
-    R20 = Radiobutton(wdw, text="Liked", variable=radio_matrl3, value= 1,
-                      command=sel_matrl3)
-    R20.pack( anchor = W )
-    R21 = Radiobutton(wdw, text="Disliked", variable=radio_matrl3, value= -1,
-                      command=sel_matrl3)
-    R21.pack( anchor = W )
-
-    teach_var(wdw)
-
-    R22 = Radiobutton(wdw, text="Liked", variable=radio_teach3, value= 1,
-                      command=sel_teach3)
-    R22.pack( anchor = W )
-    R23 = Radiobutton(wdw, text="Disliked", variable=radio_teach3, value= -1,
-                      command=sel_teach3)
-    R23.pack( anchor = W )
+    teach_var(wdw, radio_teach3, sel_teach3)
     
     course4_entr = Entry(wdw, bd =5)
     course4_entr.pack()
     course4_entry = course4_entr
     
-    diff_var(wdw, 4)
-    
-    R24 = Radiobutton(wdw, text="Easy", variable=radio_diff4, 
-                     value=1,command=sel_diff4)
-    R24.pack( anchor = W )
-    R25 = Radiobutton(wdw, text="Difficult", variable=radio_diff4, 
-                     value=(-1),command=sel_diff4)
-    R25.pack( anchor = W )
+    diff_var(wdw, radio_diff4, sel_diff4)
 
-    mat_var(wdw)
+    mat_var(wdw, radio_matrl4, sel_matrl4)
 
-    R26 = Radiobutton(wdw, text="Liked", variable=radio_matrl4, value= 1,
-                      command=sel_matrl4)
-    R26.pack( anchor = W )
-    R27 = Radiobutton(wdw, text="Disliked", variable=radio_matrl4, value= -1,
-                      command=sel_matrl4)
-    R27.pack( anchor = W )
-
-    teach_var(wdw)
-
-    R28 = Radiobutton(wdw, text="Liked", variable=radio_teach4, value= 1,
-                      command=sel_teach4)
-    R28.pack( anchor = W )
-    R29 = Radiobutton(wdw, text="Disliked", variable=radio_teach4, value= -1,
-                      command=sel_teach4)
-    R29.pack( anchor = W )
-    
-
+    teach_var(wdw, radio_teach4, sel_teach4)
 
     #Add "get recommendations" button
     btn = Button(wdw, text ="GET RECOMMENDATIONS!", command = get_reco)
     btn.pack()
-
 
 def get_reco():
     global course3
     global course4
 
     course3 = course3_entry.get()
-
     course4 = course4_entry.get()
     
     data = [concentration,year_entry,sem_entry,
@@ -478,7 +375,6 @@ def fifth_window(courses):
     print(len(courses))
 
     for i in range (0, 9):
-
         #List of course recommendations based on the algorithms will go here:
         var = StringVar()
         label_descr = courses[i]
@@ -488,8 +384,7 @@ def fifth_window(courses):
 
     #Add "Start All Over again" button
     btn = Button(wdw, text ="Go back to Home Page!", command = sec_window)
-    btn.pack()
-    
+    btn.pack()  
 
 def sel_yr():
     global year_entry
@@ -546,8 +441,6 @@ def sel_matrl4():
 def sel_teach4():
     global teaching4
     teaching4 = str(radio_teach4.get())
-    
-
     
 main()
 root.mainloop()
