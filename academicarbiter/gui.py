@@ -188,7 +188,7 @@ def sec_window():
 
     #add radio button for semester
     make_radio(wdw, "Fall", radio_sem, sel_sem, 1)
-    make_radio(wdw, "Spring", radio_sem, sel_sem, 1)
+    make_radio(wdw, "Spring", radio_sem, sel_sem, 2)
 
     #another label for concentration
     var = StringVar()
