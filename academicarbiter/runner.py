@@ -12,10 +12,10 @@ import semester
 #done 
 
 def run(sD):
-    course1 = course.course(sD[3],sD[4],sD[5],sD[6])
-    course2 = course.course(sD[7],sD[8],sD[9],sD[10])
-    course3 = course.course(sD[11],sD[12],sD[13],sD[14])
-    course4 = course.course(sD[15],sD[16],sD[17],sD[18])
+    course1 = course.course(sD[3].lower(),sD[4],sD[5],sD[6])
+    course2 = course.course(sD[7].lower(),sD[8],sD[9],sD[10])
+    course3 = course.course(sD[11].lower(),sD[12],sD[13],sD[14])
+    course4 = course.course(sD[15].lower(),sD[16],sD[17],sD[18])
     courses = [course1,course2,course3,course4]
     sem = semester.semester(courses)
     students = data_parser.getStudents()
@@ -26,9 +26,6 @@ def run(sD):
                               sD[19],sD[20],sD[21],
                               students, courseData, concentrations)
     recs = alg.values()
-    
-    print("returned")
-    print(recs)
     
     #get a sorted list of the courses by their weights
     keys = sorted(recs.keys(), reverse=True)
@@ -51,6 +48,4 @@ def run(sD):
                 else:
                     recList.append(recs[key][i])
                     totalRecs += 1
-    print("list")    
-    print(recList)           
     return recList

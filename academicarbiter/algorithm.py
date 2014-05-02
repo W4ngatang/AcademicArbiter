@@ -65,11 +65,10 @@ class algorithm:
                 
                 #assign a weight for the other student's courses
                 for myClass in myClasses:
-                    print(myClass.getName())
                     for theirClass in theirClasses:
                         #check the name
-                        if (myClass.getName() == theirClass.getName()):
-                            print(myClass.getName())
+                        if (myClass.getName() == 
+                            theirClass.getName()):
                             #compare your scores for the class
                             classScore = 0
 
@@ -90,25 +89,16 @@ class algorithm:
                                 #by dividing by the size of the class
 
                             enrollment = self.allCourses[myClass.getName()]
-                            
-                            print("first")
-                            print(similarity)
+
                             classScore *= self.courseWeight * (1.0 / enrollment)
                             similarity += classScore
-                            print("class")
-                            print(classScore)
-                            print("after")
-                            print(similarity)
     
                 #check for the same concentration
                 if (curConc == self.iconcentration):
-                    print("same")
                     #find the number of students in that concentration
                     numStudents = self.allConcentrations[curConc]
                     similarity *= (1 + self.conWeight/numStudents)
-                print("third")
-                print(similarity)
-                
+                    
                 theirClasses = curSemesters[semIndex + 1].getCourses()
                 
                 #add their courses to a list of recs
@@ -123,12 +113,6 @@ class algorithm:
                         self.courseRecs[course.getName()] += score
                     else:
                         self.courseRecs[course.getName()] = score 
-            
-            #remove the courses if they have already taken
-            #for x in self.courseRecs:  
-                #for y in myClasses:
-                    #if x == y:
-                        #del self.courseRecs[x]
                                       
         #create a new sorted dictionary based on weights
         newRecs = dict()

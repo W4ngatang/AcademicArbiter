@@ -371,7 +371,7 @@ def fifth_window(courses):
     text.tag_config("center", justify="center")
     text.tag_add("center", 1.0, "end")
     text.config(state=DISABLED)
-    print(courses)
+    
     length = len(courses)
     numRecs = 0
     if (length < 10):

@@ -57,11 +57,7 @@ for key in newKeys:
 courses = ["a","b"]
 sem = semester.semester(courses)
 #print (sem.getCourses())
-
-str = "'one\n'"
-print(str)
-str = str.strip()
-print(str)
-print("here")
-
+if ("a1".lower() == "A1".lower()):
+    print("true")
+    
 
