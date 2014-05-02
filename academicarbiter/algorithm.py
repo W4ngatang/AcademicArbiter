@@ -1,9 +1,6 @@
 #defines the actual algorithm
 
 import course
-import student
-import semester
-import data_parser
 
 class algorithm:
     #your info
@@ -26,7 +23,7 @@ class algorithm:
     teach = 0
     subj = 0
     
-    #default hardcoded weights
+    #default hard coded weights
     conWeight = 50.0
     courseWeight = 50.0
     
@@ -103,12 +100,10 @@ class algorithm:
                 
                 #add their courses to a list of recs
                 for course in theirClasses:
-                    #print(course.getName())
                     score = 0
                     score += (similarity * course.getD() * self.diff)
                     score += (similarity * course.getT() * self.teach)
                     score += (similarity * course.getS() * self.subj)
-                    print(score)
                     if course in self.courseRecs:
                         self.courseRecs[course.getName()] += score
                     else:
@@ -117,18 +112,10 @@ class algorithm:
         #create a new sorted dictionary based on weights
         newRecs = dict()
         keys = self.courseRecs.keys()
-        print("first time")
-        print(self.courseRecs)
         for x in keys:
             key = self.courseRecs[x]
             if key in newRecs.keys(): 
                 newRecs[key].append(x)
             else:
                 newRecs[key] = [x] 
-        return newRecs
-        
-                        
-                        
-                    
-                
-            
+        return newRecs          
