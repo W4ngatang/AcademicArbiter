@@ -7,7 +7,7 @@ def getStudents() :
     dump = []
     with open("sample_students.txt") as file:
         for line in file:
-            currentline = (line.rstrip("\n")).split(", "),
+            currentline = (line.rstrip("\n")).split(","),
             dump.append(currentline)
     
     # go over the rows of the data dump
