@@ -5,6 +5,7 @@ import runner
 
 #define root
 root = Tk()
+root.title("Recomenditas")
 root.withdraw()
 
 #root.title("Course Recommendation1")
@@ -66,16 +67,16 @@ teaching2 = None
 course3 = None
 course3_entry = None
 
-difficulty3_entry = None
-material3_entry = None
-teaching3_entry = None
+difficulty3 = None
+material3 = None
+teaching3 = None
 
 course4 = None
 course4_entry = None
 
-difficulty4_entry = None
-material4_entry = None
-teaching4_entry = None
+difficulty4 = None
+material4 = None
+teaching4 = None
 
 #close window function
 def close_window():
@@ -85,11 +86,39 @@ def close_window():
     if not windows: root.quit()
     
 #function to add a radio button
-
 def make_radio(wdw, textVal, varName, commandName, val):
     R = Radiobutton(wdw, text=textVal, variable=varName, 
                      value=val,command=commandName)
     R.pack(anchor = W)
+    
+#error function for missing information
+def error(windowNum):
+            wdw = new_window()
+            #Add Welcome
+            text = Text(wdw, width=45, height=1, font=customFont, bg='red')
+            text.pack()
+            text.insert("end","Error")
+            text.tag_config("center", justify="center")
+            text.tag_add("center", 1.0, "end")
+        
+            #start the middle description    
+            text = Text(wdw, width=30, height=5, font=customFont2, wrap=WORD)
+            text.pack()
+        
+            descr = "Please input all of your information!"
+            text.insert("end",descr)
+            text.config(state=DISABLED)
+            
+            close_window()
+            #add button
+            if (windowNum == 2):
+                btn = Button(wdw, text ="Return", command = second_window)
+            elif (windowNum == 3):
+                btn = Button(wdw, text ="Return", command = third_window)
+            elif (windowNum == 4):
+                btn = Button(wdw, text ="Return", command = fourth_window)
+            btn.pack()
+    
     
 def diff_var(wdw, varName, commandName):
     #variable for difficulty
@@ -138,7 +167,7 @@ def first_window():
     #Add Welcome
     text = Text(wdw, width=45, height=1, font=customFont, bg='red')
     text.pack()
-    text.insert("end","WELCOME!!")
+    text.insert("end","WELCOME!")
     text.tag_config("center", justify="center")
     text.tag_add("center", 1.0, "end")
 
@@ -146,16 +175,16 @@ def first_window():
     text = Text(wdw, width=30, height=5, font=customFont2, wrap=WORD)
     text.pack()
 
-    descr = "Get your next semester's course recommendation based on\
- what student like you have taken in past years."
+    descr = "Get your next semester's course recommendations based on\
+ what students like you have taken in past years."
     text.insert("end",descr)
     text.config(state=DISABLED)
 
     #add button
-    btn = Button(wdw, text ="Click to Start", command = sec_window)
+    btn = Button(wdw, text ="Click to Start", command = second_window)
     btn.pack()
    
-def sec_window():
+def second_window():
     global nextteaching_entry
     global nextmaterial_entry
     global nextdifficulty_entry
@@ -241,27 +270,33 @@ in terms of the following? Give your answer on a scale of 1 to 100."
     nextteaching_entry = teaching_entr
 
     #Add "Go to Next page" button
-    btn = Button(wdw, text ="Go to Next Page.", command = third_window)
+    btn = Button(wdw, text ="Go to Next Page.", command = third)
     btn.pack()
-
-def third_window():
+    
+def third():
     global nextdifficulty
     global nextmaterial
     global nextteaching
     global concentration
+    nextteaching = nextteaching_entry.get()
+    nextmaterial = nextmaterial_entry.get()
+    nextdifficulty = nextdifficulty_entry.get()
+    concentration = conc_entry.get()
+    
+    if (nextteaching == "" or nextmaterial == "" or
+        nextdifficulty == "" or concentration == "" or 
+        year_entry == None or sem_entry == None):
+            error(2)
+    else:
+        third_window()
+
+def third_window():
+   
     global course1_entry
     global course2_entry
+
     #third window
     wdw = new_window()
-    #to access concentration
-
-    nextteaching = nextteaching_entry.get()
-
-    nextmaterial = nextmaterial_entry.get()
-
-    nextdifficulty = nextdifficulty_entry.get()
-    
-    concentration = conc_entry.get()
     #close second window
     close_window()
     
@@ -279,9 +314,7 @@ tell us what you felt about each class."
     course1_entry = course1_entr
     
     diff_var(wdw, radio_diff1, sel_diff1)
-
     mat_var(wdw, radio_matrl1, sel_matrl1)
-
     teach_var(wdw, radio_teach1, sel_teach1)
 
     course2_entr = Entry(wdw, bd =5)
@@ -295,20 +328,29 @@ tell us what you felt about each class."
     teach_var(wdw, radio_teach2,sel_teach2)
 
     #Add "Add info for two more courses" button
-    btn = Button(wdw, text ="Add info for two more courses!", command = fourth_window)
+    btn = Button(wdw, text ="Add info for two more courses!", command = fourth)
     btn.pack()
+    
+def fourth():
+    global course1
+    global course2 
+    
+    course1 = course1_entry.get()
+    course2 = course2_entry.get()
+    
+    if (difficulty1 == None or teaching1 == None or material1 == None or 
+        difficulty2 == None or teaching2 == None or material2 == None or
+        course1 == "" or course2 == ""):
+            error(3)
+    else:
+        fourth_window()
 
 def fourth_window ():
-    global course1
-    global course2
+    
     global course3_entry
     global course4_entry
     global course3
     global course4
-
-    course1 = course1_entry.get()
-    
-    course2 = course2_entry.get()
 
     wdw = new_window()
     
@@ -320,9 +362,7 @@ def fourth_window ():
     course3_entry = course3_entr
 
     diff_var(wdw, radio_diff3, sel_diff3)
-
     mat_var(wdw, radio_matrl3, sel_matrl3)
-
     teach_var(wdw, radio_teach3, sel_teach3)
     
     course4_entr = Entry(wdw, bd =5)
@@ -336,16 +376,25 @@ def fourth_window ():
     teach_var(wdw, radio_teach4, sel_teach4)
 
     #Add "get recommendations" button
-    btn = Button(wdw, text ="GET RECOMMENDATIONS!", command = get_reco)
+    btn = Button(wdw, text ="GET RECOMMENDATIONS!", command = fifth)
     btn.pack()
-
-def get_reco():
+    
+def fifth():
     global course3
     global course4
 
     course3 = course3_entry.get()
     course4 = course4_entry.get()
     
+    if (difficulty3 == None or teaching3 == None or material3 == None or 
+        difficulty4 == None or teaching4 == None or material4 == None or
+        course3 == "" or course4 == ""):
+            error(4)
+    else:
+        get_reco()
+
+def get_reco():
+
     data = [concentration,year_entry,sem_entry,
             course1,int(difficulty1),int(teaching1),int(material1),
             course2,int(difficulty2),int(teaching2),int(material2),
@@ -388,7 +437,7 @@ def fifth_window(courses):
         label.pack()
 
     #Add "Start All Over again" button
-    btn = Button(wdw, text ="Go back to Home Page!", command = sec_window)
+    btn = Button(wdw, text ="Go back to Home Page!", command = second_window)
     btn.pack()  
 
 def sel_yr():

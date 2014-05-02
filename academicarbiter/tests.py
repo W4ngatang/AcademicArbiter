@@ -57,7 +57,13 @@ for key in newKeys:
 courses = ["a","b"]
 sem = semester.semester(courses)
 #print (sem.getCourses())
-if ("a1".lower() == "A1".lower()):
-    print("true")
+def clean(value):
+    value = value.lower()
+    value = value.replace(" ","")
+    return value
+
+value = "A B"
+
+print(clean(value))
     
 
