@@ -26,14 +26,18 @@ class algorithm:
     teach = 0
     subj = 0
     
+    #default hardcoded weights
+    conWeight = 50.0
+    courseWeight = 50.0
+    
     #initialize an instance of the class
     def __init__ (self, sem, conc, year, semNum,
                   difficulty, teaching, subject,
                   students, courses, concs):
         self.isemester = sem
         self.iconcentration = conc
-        self.iyear = int(year)
-        self.semNum = int(semNum)
+        self.iyear = int(year) - 1
+        self.semNum = int(semNum) - 1
         self.students = students
         self.allConcentrations = concs
         self.allCourses = courses
@@ -61,9 +65,11 @@ class algorithm:
                 
                 #assign a weight for the other student's courses
                 for myClass in myClasses:
+                    print(myClass.getName())
                     for theirClass in theirClasses:
                         #check the name
                         if (myClass.getName() == theirClass.getName()):
+                            print(myClass.getName())
                             #compare your scores for the class
                             classScore = 0
 
@@ -87,28 +93,23 @@ class algorithm:
                             
                             print("first")
                             print(similarity)
+                            classScore *= self.courseWeight * (1.0 / enrollment)
+                            similarity += classScore
                             print("class")
                             print(classScore)
-                            print("second")
-                            similarity += 50 * classScore
-                            print("before")
-                            print(similarity)
-                            similarity *= (1.0 / enrollment) 
                             print("after")
                             print(similarity)
     
                 #check for the same concentration
                 if (curConc == self.iconcentration):
+                    print("same")
                     #find the number of students in that concentration
                     numStudents = self.allConcentrations[curConc]
-                    print("third")
-                    similarity *= (1 + 25/numStudents)
-                    print(similarity)
+                    similarity *= (1 + self.conWeight/numStudents)
+                print("third")
+                print(similarity)
                 
                 theirClasses = curSemesters[semIndex + 1].getCourses()
-                for course in theirClasses:
-                    print("second time course:")
-                    print(course.getName())
                 
                 #add their courses to a list of recs
                 for course in theirClasses:
