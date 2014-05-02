@@ -45,8 +45,7 @@ class algorithm:
     #go through every student and assign values for each course
     def values(self):
         for otherStudent in self.students:
-        #curYear = otherStudent.year
-        #if curYear == self.year:
+            
             curSemesters = otherStudent.getSemesters()
             curConc = otherStudent.getConcentration()
               
@@ -54,6 +53,8 @@ class algorithm:
             semIndex = self.iyear * 2 + self.semNum
             
             #get all of the courses from you and from them
+            #make sure the other student has taken more semesters than you
+            
             numSems = len(curSemesters)
             if (numSems > semIndex + 1):
                 theirSem = curSemesters[semIndex]
@@ -63,12 +64,14 @@ class algorithm:
                 #assign a weight for the other student's courses
                 for myClass in myClasses:
                     for theirClass in theirClasses:
-                        #check the name
+                        #check if its the same course
                         if (myClass.getName() == 
                             theirClass.getName()):
+                            
                             #compare your scores for the class
+                            #if its the same, then add, otherwise subtract
+                            
                             classScore = 0
-
                             if (myClass.getT() == theirClass.getT()):
                                 classScore += self.teach
                             else:
@@ -82,20 +85,21 @@ class algorithm:
                             else:
                                 classScore -= self.diff
                                 
-                                #offset likelihood of being in the same large class
-                                #by dividing by the size of the class
+                            #offset likelihood of being in the same large class
+                            #by dividing by the size of the class
 
                             enrollment = self.allCourses[myClass.getName()]
-
                             classScore *= self.courseWeight * (1.0 / enrollment)
                             similarity += classScore
     
                 #check for the same concentration
                 if (curConc == self.iconcentration):
                     #find the number of students in that concentration
+                    #offset for larger concentrations
                     numStudents = self.allConcentrations[curConc]
                     similarity *= (1 + self.conWeight/numStudents)
                     
+                #get their courses for the next semester
                 theirClasses = curSemesters[semIndex + 1].getCourses()
                 
                 #add their courses to a list of recs
@@ -109,7 +113,7 @@ class algorithm:
                     else:
                         self.courseRecs[course.getName()] = score 
                                       
-        #create a new sorted dictionary based on weights
+        #create a new sorted dictionary based on score for each course
         newRecs = dict()
         keys = self.courseRecs.keys()
         for x in keys:

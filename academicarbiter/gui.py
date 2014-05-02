@@ -91,7 +91,7 @@ def make_radio(wdw, textVal, varName, commandName, val):
                      value=val,command=commandName)
     R.pack(anchor = W)
     
-#error function for missing information
+#error function for when the user is missing information
 def error(windowNum):
             wdw = new_window()
             #Add Welcome
@@ -118,8 +118,9 @@ def error(windowNum):
             elif (windowNum == 4):
                 btn = Button(wdw, text ="Return", command = fourth_window)
             btn.pack()
-    
-    
+  
+
+#function for adding difficulty radio buttons
 def diff_var(wdw, varName, commandName):
     #variable for difficulty
     var = StringVar()
@@ -131,6 +132,7 @@ def diff_var(wdw, varName, commandName):
     make_radio(wdw, "Easy", varName, commandName, 1)
     make_radio(wdw, "Difficult", varName, commandName, -1)
 
+#function for adding teach radio buttons
 def teach_var(wdw, varName, commandName):   
     # variable for teaching
     var = StringVar()
@@ -142,6 +144,7 @@ def teach_var(wdw, varName, commandName):
     make_radio(wdw, "Liked", varName, commandName, 1)
     make_radio(wdw, "Disliked", varName, commandName, -1)
   
+#function for adding material radio buttons  
 def mat_var(wdw, varName, commandName):  
     #variable for material
     var = StringVar()
@@ -153,15 +156,18 @@ def mat_var(wdw, varName, commandName):
     make_radio(wdw, "Liked", varName, commandName, 1)
     make_radio(wdw, "Disliked", varName, commandName, -1)
 
+#function for adding new windows
 def new_window():
     wdw = Toplevel()
     wdw.protocol('WM_DELETE_WINDOW', close_window)
     windows.append(wdw)
     return wdw
 
+#main method
 def main():
     first_window()
-   
+
+#make the first window   
 def first_window():
     wdw = new_window()
     #Add Welcome
@@ -183,7 +189,8 @@ def first_window():
     #add button
     btn = Button(wdw, text ="Click to Start", command = second_window)
     btn.pack()
-   
+ 
+#make the second window  
 def second_window():
     global nextteaching_entry
     global nextmaterial_entry
@@ -272,7 +279,9 @@ in terms of the following? Give your answer on a scale of 1 to 100."
     #Add "Go to Next page" button
     btn = Button(wdw, text ="Go to Next Page.", command = third)
     btn.pack()
-    
+  
+  
+#error check second window before opening third    
 def third():
     global nextdifficulty
     global nextmaterial
@@ -290,6 +299,7 @@ def third():
     else:
         third_window()
 
+#make third window
 def third_window():
    
     global course1_entry
@@ -330,7 +340,8 @@ tell us what you felt about each class."
     #Add "Add info for two more courses" button
     btn = Button(wdw, text ="Add info for two more courses!", command = fourth)
     btn.pack()
-    
+ 
+#error check third window before opening fourth   
 def fourth():
     global course1
     global course2 
@@ -345,6 +356,7 @@ def fourth():
     else:
         fourth_window()
 
+#open fourth window
 def fourth_window ():
     
     global course3_entry
@@ -378,7 +390,8 @@ def fourth_window ():
     #Add "get recommendations" button
     btn = Button(wdw, text ="GET RECOMMENDATIONS!", command = fifth)
     btn.pack()
-    
+  
+#error check fourth window before running algorithm  
 def fifth():
     global course3
     global course4
@@ -393,6 +406,7 @@ def fifth():
     else:
         get_reco()
 
+#run the algorithm
 def get_reco():
 
     data = [concentration,year_entry,sem_entry,
@@ -406,7 +420,7 @@ def get_reco():
     
     fifth_window(courses)
 
-#fifth_window
+#display the results to the user
 def fifth_window(courses):
     wdw = new_window()
     
@@ -440,6 +454,7 @@ def fifth_window(courses):
     btn = Button(wdw, text ="Go back to Home Page!", command = second_window)
     btn.pack()  
 
+#functions for all the radio buttons
 def sel_yr():
     global year_entry
     year_entry = str(radio_year.get())
